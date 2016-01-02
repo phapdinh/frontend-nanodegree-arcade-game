@@ -32,24 +32,24 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var player = function(x,y) {
+var Player = function(x,y) {
 	this.x = x;
 	this.y = y;
 	this.sprite = 'images/char-boy.png';
 };
 
-player.prototype.update = function() {
+Player.prototype.update = function() {
 	if(this.y === 60) {
 		this.x = 200;
 		this.y = 400;
 	}
 };
 
-player.prototype.render = function() {
+Player.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-player.prototype.handleInput = function(key) {
+Player.prototype.handleInput = function(key) {
 	if(key === "left" && (this.x > 0)) {
 		this.x = this.x - 10;
 	}
@@ -70,7 +70,7 @@ var allEnemies = [];
 allEnemies.push(new Enemy(0,60,30));
 allEnemies.push(new Enemy(100,140,80));
 allEnemies.push(new Enemy(100,220,50));
-var player = new player(200,400);
+var player = new Player(200,400);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
