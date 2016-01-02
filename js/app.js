@@ -39,7 +39,7 @@ var player = function(x,y) {
 };
 
 player.prototype.update = function() {
-	if(player.y === 60) {
+	if(this.y === 60) {
 		this.x = 200;
 		this.y = 400;
 	}
