@@ -62,6 +62,22 @@ Player.prototype.handleInput = function(key) {
 	else if(key === "down" && (this.y < 435)) {
 		this.y = this.y + 10;
 	}
+	
+	if(key === 'h') {
+		this.sprite = 'images/char-cat-girl.png';
+	}
+	else if(key === 'j') {
+		this.sprite = 'images/char-horn-girl.png';
+	}
+	else if(key === 'k') {
+		this.sprite = 'images/char-pink-girl.png';
+	}
+	else if(key === 'l') {
+		this.sprite = 'images/char-princess-girl.png';
+	}
+	else if(key === 'g') {
+		this.sprite = 'images/char-boy.png';
+	}
 };
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -69,7 +85,7 @@ Player.prototype.handleInput = function(key) {
 var allEnemies = [];
 allEnemies.push(new Enemy(0,60,30));
 allEnemies.push(new Enemy(100,140,80));
-allEnemies.push(new Enemy(100,220,50));
+allEnemies.push(new Enemy(100,220,50)); 
 var player = new Player(200,400);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -78,7 +94,12 @@ document.addEventListener('keyup', function(e) {
         37: 'left',
         38: 'up',
         39: 'right',
-        40: 'down'
+        40: 'down',
+		72: 'h',
+		74: 'j',
+		75: 'k',
+		76: 'l',
+		71: 'g'
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
