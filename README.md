@@ -14,3 +14,4 @@ How to Play
 2. Avoid getting hit by the enemy bugs
 3. Cross the pavement path until you reach the river
 4. Once you reach the river, you can start the game over
+5. You can switch characters by pressing the h, j, k, l, and g keys
