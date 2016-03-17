@@ -113,7 +113,7 @@ var Engine = (function(global) {
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
                 'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/grass-block.png'   // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
@@ -134,6 +134,10 @@ var Engine = (function(global) {
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
+        }
+        window.numStars = 0;
+        for (col = 0; col < window.numStars; col++) {
+            ctx.drawImage(Resources.get('images/Star.png'), col * 101, 581);
         }
 
         renderEntities();
@@ -172,10 +176,11 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-		'images/char-cat-girl.png',
-		'images/char-horn-girl.png',
-		'images/char-pink-girl.png',
-		'images/char-princess-girl.png'
+	'images/char-cat-girl.png',
+	'images/char-horn-girl.png',
+	'images/char-pink-girl.png',
+	'images/char-princess-girl.png',
+	'images/Star.png'
     ]);
     Resources.onReady(init);
 
