@@ -59,7 +59,7 @@ Player.prototype.handleInput = function(key) {
 	else if(key === "right" && (this.x < 420)) {
 		this.x = this.x + 10;
 	}
-	else if(key === "down" && (this.y < 435)) {
+	else if(key === "down" && (this.y < 430)) {
 		this.y = this.y + 10;
 	}
 	
@@ -104,8 +104,10 @@ Key.prototype.render = function() {
 Key.prototype.update = function() {
 	if((this.x - 70 < player.x && player.x < (this.x + 75)) && ((this.y - 50) < player.y && player.y < (this.y + 70))) {
 		key.x = Math.floor(Math.random() * 420);;
-		key.y = Math.floor(Math.random() * 190 + 60);
-		star.numStars++;
+		key.y = Math.floor(Math.random() * 160 + 60);
+		if(star.numStars < 6) {
+			star.numStars++;
+		}
 	}
 }
 // Now instantiate your objects.

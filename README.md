@@ -12,6 +12,7 @@ How to Start the Game
 How to Play
 1. Use arrow key to move player around canvas
 2. Avoid getting hit by the enemy bugs
-3. Cross the pavement path until you reach the river
-4. Once you reach the river, you can start the game over
-5. You can switch characters by pressing the h for cat girl, j for horn girl, k for pink girl, l for princess girl, and g for boy
+3. Keys will randomly appear on the pavement
+4. Collect five keys and you win the game
+5. Each time you collect a key, a star will appear at the bottom
+6. You can switch characters by pressing the h for cat girl, j for horn girl, k for pink girl, l for princess girl, and g for boy
