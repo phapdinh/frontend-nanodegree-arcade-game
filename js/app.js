@@ -42,7 +42,7 @@ Player.prototype.update = function() {
 	if(this.y === 60) {
 		this.x = 200;
 		this.y = 400;
-		win.numStars++;
+		window.numStars++;
 	}
 };
 
