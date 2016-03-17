@@ -42,7 +42,6 @@ Player.prototype.update = function() {
 	if(this.y === 60) {
 		this.x = 200;
 		this.y = 400;
-		star.numStars++;
 	}
 };
 
@@ -83,12 +82,31 @@ Player.prototype.handleInput = function(key) {
 
 var Star = function() {
 	this.numStars = 0;
+	this.sprite = 'images/Star.png';
 };
 
 Star.prototype.render = function() {
 	for (col = 0; col < this.numStars; col++) {
-            ctx.drawImage(Resources.get('images/Star.png'), col * 101, 540);
+        ctx.drawImage(Resources.get(this.sprite), col * 101, 540);
     }
+}
+
+var Key = function() {
+	this.x = Math.floor(Math.random() * 420);
+	this.y = Math.floor(Math.random() * 200 + 60);
+	this.sprite = 'images/Key.png'
+}
+
+Key.prototype.render = function() {
+	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+Key.prototype.update = function() {
+	if((this.x - 70 < player.x && player.x < (this.x + 75)) && ((this.y - 50) < player.y && player.y < (this.y + 70))) {
+		key.x = Math.floor(Math.random() * 420);;
+		key.y = Math.floor(Math.random() * 190 + 60);
+		star.numStars++;
+	}
 }
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -99,6 +117,7 @@ allEnemies.push(new Enemy(100,140,80));
 allEnemies.push(new Enemy(100,220,50)); 
 var player = new Player(200,400);
 var star = new Star();
+var key = new Key();
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
