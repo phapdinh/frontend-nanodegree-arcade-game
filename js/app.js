@@ -20,7 +20,7 @@ Enemy.prototype.update = function(dt) {
 	if(this.x > 420) this.x = 0;
 	if((this.x - 70 < player.x && player.x < (this.x + 75)) && ((this.y - 50) < player.y && player.y < (this.y + 70))) {
 		player.x = 200;
-		player.y = 400;
+		player.y = 340;
 	}
 };
 
@@ -41,7 +41,7 @@ var Player = function(x,y) {
 Player.prototype.update = function() {
 	if(this.y === 60) {
 		this.x = 200;
-		this.y = 400;
+		this.y = 340;
 	}
 };
 
@@ -59,7 +59,7 @@ Player.prototype.handleInput = function(key) {
 	else if(key === "right" && (this.x < 420)) {
 		this.x = this.x + 10;
 	}
-	else if(key === "down" && (this.y < 430)) {
+	else if(key === "down" && (this.y < 347)) {
 		this.y = this.y + 10;
 	}
 	
@@ -87,7 +87,7 @@ var Star = function() {
 
 Star.prototype.render = function() {
 	for (col = 0; col < this.numStars; col++) {
-        ctx.drawImage(Resources.get(this.sprite), col * 101, 540);
+        ctx.drawImage(Resources.get(this.sprite), col * 101, 455);
     }
 }
 
@@ -117,7 +117,7 @@ var allEnemies = [];
 allEnemies.push(new Enemy(0,60,30));
 allEnemies.push(new Enemy(100,140,80));
 allEnemies.push(new Enemy(100,220,50)); 
-var player = new Player(200,400);
+var player = new Player(200,340);
 var star = new Star();
 var key = new Key();
 // This listens for key presses and sends the keys to your
