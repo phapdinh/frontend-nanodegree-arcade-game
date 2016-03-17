@@ -26,7 +26,7 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 505;
-    canvas.height = 606;
+    canvas.height = 695;
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -135,10 +135,6 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-        window.numStars = 0;
-        for (col = 0; col < window.numStars; col++) {
-            ctx.drawImage(Resources.get('images/Star.png'), col * 101, 581);
-        }
 
         renderEntities();
     }
@@ -156,6 +152,7 @@ var Engine = (function(global) {
         });
 
         player.render();
+		star.render();
     }
 
     /* This function does nothing but it could have been a good place to

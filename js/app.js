@@ -42,7 +42,7 @@ Player.prototype.update = function() {
 	if(this.y === 60) {
 		this.x = 200;
 		this.y = 400;
-		window.numStars++;
+		star.numStars++;
 	}
 };
 
@@ -80,6 +80,16 @@ Player.prototype.handleInput = function(key) {
 		this.sprite = 'images/char-boy.png';
 	}
 };
+
+var Star = function() {
+	this.numStars = 0;
+};
+
+Star.prototype.render = function() {
+	for (col = 0; col < this.numStars; col++) {
+            ctx.drawImage(Resources.get('images/Star.png'), col * 101, 540);
+    }
+}
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -88,6 +98,7 @@ allEnemies.push(new Enemy(0,60,30));
 allEnemies.push(new Enemy(100,140,80));
 allEnemies.push(new Enemy(100,220,50)); 
 var player = new Player(200,400);
+var star = new Star();
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
