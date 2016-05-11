@@ -89,6 +89,11 @@ Star.prototype.render = function() {
 	for (col = 0; col < this.numStars; col++) {
         ctx.drawImage(Resources.get(this.sprite), col * 101, 455);
     }
+	if(star.numStars >= 5) {
+		ctx.font = "36pt Impact";
+		ctx.fillStyle = "black";
+		ctx.fillText("You Win!",150, 250);
+	}
 }
 
 var Key = function() {
